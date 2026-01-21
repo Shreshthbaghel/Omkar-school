@@ -52,14 +52,13 @@ const Gallery = ({ images = [] }) => {
                         className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-gold"
                         onClick={() => setSelectedImage(image)}
                     >
-                        <div className="aspect-video bg-gray-200 overflow-hidden">
+                        <div className="aspect-video bg-gradient-to-br from-primary/10 to-gold/10 overflow-hidden">
                             <img
                                 src={image.src}
                                 alt={image.alt}
                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                onError={(e) => {
-                                    e.target.src = `https://via.placeholder.com/400x300/1a2947/d4a853?text=${encodeURIComponent(image.alt)}`;
-                                }}
+                                loading="lazy"
+                                 onError={() => setImgSrc("/placeholder.jpg")}
                             />
                         </div>
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary via-primary/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
