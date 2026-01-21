@@ -1,0 +1,24 @@
+
+  [
+        {
+            "id": 3,
+            "name": "Mr. Amit Verma",
+            "subject": "Mathematics",
+            "photo": "/images/teacher-math.jpg",
+            "qualifications": "B.Ed"
+        },
+        {
+            "id": 4,
+            "name": "Ms. Sneha Patel",
+            "subject": "English",
+            "photo": "/images/teacher-english.jpg",
+            "qualifications": "B.Ed"
+        },
+        {
+            "id": 5,
+            "name": "Dr. Vikram Singh",
+            "subject": "Science",
+            "photo": "/images/teacher-science.jpg",
+            "qualifications": "B.Ed"
+        }
+    ]
