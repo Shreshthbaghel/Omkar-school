@@ -1,14 +1,6 @@
-/**
- * Form Validation Utilities
- * 
- * Centralized validation logic for form inputs
- */
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_REGEX = /^[6-9]\d{9}$/;
 
-/**
- * Validate name fields (parent name, student name)
- * @param {string} name - Name to validate
- * @returns {object} { valid: boolean, error: string }
- */
 export const validateName = (name) => {
     if (!name || name.trim().length === 0) {
         return { valid: false, error: 'Name is required' };
@@ -19,27 +11,19 @@ export const validateName = (name) => {
     if (name.trim().length > 50) {
         return { valid: false, error: 'Name must be less than 50 characters' };
     }
-    // Only letters, spaces, hyphens, and apostrophes allowed
-    const nameRegex = /^[a-zA-Z\s'-]+$/;
+    const nameRegex = /^[A-Za-z\s.'-]+$/;
     if (!nameRegex.test(name)) {
         return { valid: false, error: 'Name can only contain letters, spaces, hyphens, and apostrophes' };
     }
     return { valid: true, error: '' };
 };
 
-/**
- * Validate phone number
- * @param {string} phone - Phone number to validate
- * @returns {object} { valid: boolean, error: string }
- */
 export const validatePhone = (phone) => {
     if (!phone || phone.trim().length === 0) {
         return { valid: false, error: 'Phone number is required' };
     }
-    // Remove spaces, hyphens, and parentheses for validation
     const cleanPhone = phone.replace(/[\s\-()]/g, '');
 
-    // Indian phone number: 10 digits, optionally starting with +91
     const phoneRegex = /^(\+91)?[6-9]\d{9}$/;
     if (!phoneRegex.test(cleanPhone)) {
         return { valid: false, error: 'Please enter a valid 10-digit Indian phone number' };
@@ -47,12 +31,6 @@ export const validatePhone = (phone) => {
     return { valid: true, error: '' };
 };
 
-/**
- * Validate class selection
- * @param {string} className - Selected class
- * @param {array} availableClasses - List of available classes
- * @returns {object} { valid: boolean, error: string }
- */
 export const validateClass = (className, availableClasses) => {
     if (!className || className.trim().length === 0) {
         return { valid: false, error: 'Please select a class' };
@@ -63,25 +41,13 @@ export const validateClass = (className, availableClasses) => {
     return { valid: true, error: '' };
 };
 
-/**
- * Validate message/additional info
- * @param {string} message - Message to validate
- * @returns {object} { valid: boolean, error: string }
- */
 export const validateMessage = (message) => {
-    // Message is optional, but if provided, check length
     if (message && message.trim().length > 500) {
         return { valid: false, error: 'Message must be less than 500 characters' };
     }
     return { valid: true, error: '' };
 };
 
-/**
- * Validate entire callback form
- * @param {object} formData - Form data object
- * @param {array} availableClasses - List of available classes
- * @returns {object} { valid: boolean, errors: object }
- */
 export const validateCallbackForm = (formData, availableClasses) => {
     const errors = {};
 

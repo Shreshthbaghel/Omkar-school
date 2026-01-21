@@ -1,18 +1,9 @@
-/**
- * Simple Rate Limiter for Form Submissions
- * 
- * Uses localStorage to track submission timestamps
- * Prevents spam without requiring a backend
- */
+
 
 const STORAGE_KEY = 'callback_form_submissions';
 const MAX_SUBMISSIONS = 3;
-const TIME_WINDOW_MS = 30 * 60 * 1000; // 30 minutes
+const TIME_WINDOW_MS = 30 * 60 * 1000; 
 
-/**
- * Get submission history from localStorage
- * @returns {array} Array of timestamps
- */
 const getSubmissionHistory = () => {
     try {
         const history = localStorage.getItem(STORAGE_KEY);
@@ -23,10 +14,6 @@ const getSubmissionHistory = () => {
     }
 };
 
-/**
- * Save submission history to localStorage
- * @param {array} history - Array of timestamps
- */
 const saveSubmissionHistory = (history) => {
     try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
@@ -35,11 +22,7 @@ const saveSubmissionHistory = (history) => {
     }
 };
 
-/**
- * Clean old submissions outside the time window
- * @param {array} history - Array of timestamps
- * @returns {array} Cleaned array
- */
+
 const cleanOldSubmissions = (history) => {
     const now = Date.now();
     return history.filter(timestamp => (now - timestamp) < TIME_WINDOW_MS);
@@ -60,7 +43,6 @@ export const canSubmit = () => {
         };
     }
 
-    // Calculate when the oldest submission will expire
     const oldestSubmission = Math.min(...history);
     const remainingTime = TIME_WINDOW_MS - (Date.now() - oldestSubmission);
 
@@ -71,9 +53,7 @@ export const canSubmit = () => {
     };
 };
 
-/**
- * Record a successful submission
- */
+
 export const recordSubmission = () => {
     let history = getSubmissionHistory();
     history = cleanOldSubmissions(history);
@@ -81,11 +61,6 @@ export const recordSubmission = () => {
     saveSubmissionHistory(history);
 };
 
-/**
- * Format remaining time into human-readable string
- * @param {number} ms - Milliseconds
- * @returns {string} Formatted time
- */
 export const formatRemainingTime = (ms) => {
     const minutes = Math.ceil(ms / (60 * 1000));
     if (minutes < 60) {
@@ -95,9 +70,6 @@ export const formatRemainingTime = (ms) => {
     return `${hours} hour${hours !== 1 ? 's' : ''}`;
 };
 
-/**
- * Reset submission history (for testing purposes)
- */
 export const resetSubmissions = () => {
     localStorage.removeItem(STORAGE_KEY);
 };
