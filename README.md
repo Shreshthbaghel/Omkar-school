@@ -211,10 +211,3 @@ colors: {
 - Phone: +91 8602410774
 - Address: In front of Dauji Petrol Pump, Sahrana Road, Morena (M.P.) - 476001
 
-## 📄 License
-
-This project is private and proprietary to Omkaar School of Excellence.
-
----
-
-Built with ❤️ for quality education at Omkaar School of Excellence
