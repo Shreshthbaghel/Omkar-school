@@ -1,0 +1,34 @@
+{
+    "name": "Omkaar School of Excellence",
+    "tagline": "Knowledge • Integrity • Growth",
+    "about": "Omkaar School of Excellence is a newly established institution dedicated to providing quality education along with a strong focus on sports, discipline, and holistic development. The school offers a balanced learning environment where academics, physical fitness, and character building go hand in hand.\n\nWith well-structured academic programs, dedicated sports training, and safe hostel facilities, we aim to support students in every aspect of their growth. Our residential facility provides a secure, caring, and structured environment that helps students develop independence, responsibility, and self-discipline.",
+    "mission": "To provide quality education along with a strong focus on sports, discipline, and holistic development. We create a balanced learning environment where academics, physical fitness, and character building go hand in hand.",
+    "vision": "To be recognized as a center of excellence that nurtures academically strong, physically fit, and morally responsible students. We envision a school where education is supported by professional sports training and a disciplined residential system that prepares students for real-life challenges.",
+    "facilities": [
+        "Well-equipped Science and Computer Labs",
+        "Sports Complex & Playground",
+        "Art, Music and Dance Classes",
+        "Safe Hostel Facilities",
+        "Transportation Facility"
+    ],
+    "contact": {
+        "email": "omkaareducation1@gmail.com",
+        "phone": "+91 8602410774",
+        "address": "In front of Dauji Petrol Pump, Sahrana Road, Morena (M.P.) - 476001",
+        "workingHours": "Monday - Saturday: 9:00 AM - 3:00 PM"
+    },
+    "classes": [
+        "Play Group",
+        "Nursery",
+        "LKG",
+        "UKG",
+        "Class 1",
+        "Class 2",
+        "Class 3",
+        "Class 4",
+        "Class 5",
+        "Class 6",
+        "Class 7",
+        "Class 8"
+    ]
+}
